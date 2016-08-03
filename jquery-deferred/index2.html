@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>jquery-deferred</title>
+</head>
+<body>
+<button id="btn1">ajax</button>
+
+
+<script src="../lib/jquery-1.9.1/jquery.min.js"></script>
+<script>
+    $(function () {
+
+//        var dtd = $.Deferred();
+//        var wait = function (dtd) {
+//            var tasks = function () {
+//                alert('执行完毕！');
+//                dtd.resolve();
+//            };
+//
+//            setTimeout(tasks, 2000);
+//        };
+//        dtd.promise(wait);
+//        wait.done(function(){
+//            alert('回调成功！');
+//        })
+//        .fail(function(){
+//            alert('回调失败！');
+//        });
+
+
+
+
+        $('#btn1').click(function () {
+            $.get('data.json').done(function(){
+                alert('回调成功！');
+            });
+
+//            wait(dtd)
+
+//            $.when($.ajax('data.json')).then(function(){
+//                alert('ok');
+//            });
+
+        });
+    });
+</script>
+</body>
+</html>

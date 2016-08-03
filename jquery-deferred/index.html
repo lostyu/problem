@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>jquery-deferred</title>
+</head>
+<body>
+<button id="btn1">ajax</button>
+
+
+<script src="../lib/jquery-1.9.1/jquery.min.js"></script>
+<script>
+    $(function(){
+
+        var wait = function(){
+            var dtd = $.Deferred();
+
+            var tasks = function(){
+                alert('执行完毕!');
+                dtd.resolve();
+            };
+            setTimeout(tasks, 5000);
+
+            return dtd.promise();
+        };
+
+
+        $('#btn1').click(function(){
+
+            // 1
+//            $.ajax({
+//                url:'data.json',
+//                success: function(){
+//                    alert('请求成功');
+//                },
+//                error: function(){
+//                    alert('请求失败');
+//                }
+//            });
+
+            // 2
+//            $.ajax('data.json')
+//                    .done(function(){
+//                        alert('回调成功');
+//                    })
+//                    .fail(function(){
+//                        alert('回调失败');
+//                    })
+//                    .done(function(){
+//                        alert('第二个回调');
+//                    });
+
+            // 3为多个操作指定回调函数
+            // $.when(deferred对象)
+//            $.when($.ajax('data.json'), $.ajax('data.json'))
+//                    .done(function(){
+//                        alert('回调成功');
+//                    })
+//                    .fail(function(){
+//                        alert('回调失败');
+//                    })
+
+
+//            $.when(wait())
+//                    .done(function(){
+//                        alert('回调成功');
+//                    })
+//                    .fail(function(){
+//                        alert('回调失败');
+//                    })
+
+
+
+
+//            var wait = function(dtd){
+//
+//                var tasks = function(){
+//                    alert('执行完毕!');
+//                    dtd.resolve();
+//                };
+//                setTimeout(tasks, 5000);
+//
+//                return dtd.promise();
+//            };
+//            $.Deferred(wait)
+//                    .done(function(){
+//                        alert('回调成功');
+//                    })
+//                    .fail(function(){
+//                        alert('回调失败');
+//                    })
+
+
+
+        });
+    });
+</script>
+</body>
+</html>
