@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>diff-two-arrays</title>
+    <script>
+        function diff(arr1, arr2) {
+            var newArr = [];
+
+            var arrMax,arrMin;
+
+            if(arr1.length >= arr2.length){
+                arrMax = arr1;
+                arrMin = arr2;
+            }else{
+                arrMax = arr2;
+                arrMin = arr1;
+            }
+
+            for(var i=0; i<arrMax.length; i++){
+                if(arrMin.indexOf(arrMax[i]) == -1){
+                    newArr.push(arrMax[i]);
+                }
+            }
+
+            for(var i=0; i<arrMin.length; i++){
+                if(arrMax.indexOf(arrMin[i]) == -1){
+                    newArr.push(arrMin[i]);
+                }
+            }
+
+            return newArr;
+        }
+
+        console.log(diff([1, "calf", 3, "piglet"], [1, "calf", 3, 4]));
+
+
+    </script>
+</head>
+<body>
+
+this
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>$Title$</title>
+    <script>
+        function unite(arr1, arr2, arr3) {
+            // 把参数合并到一个数组 [1, 3, 2, 5, 2, 1, 4, 2, 1]
+            var arr = Array.prototype.slice.call(arguments).reduce(function(pre, cur) {
+                return pre.concat(cur);
+            });
+            // hash用来存放不重复的数据
+            var hash = {};
+
+            return arr.reduce(function(pre, cur) {
+                if (!hash.hasOwnProperty(cur)) {
+                    pre.push(cur);
+                    hash[cur] = true;
+                }
+                return pre;
+            }, []);
+
+        }
+
+        unite([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+        // unite([1, 3, 2], [5, 2, 1, 4], [2, 1]) 应该返回 [1, 3, 2, 5, 4]。
+        // Arguments object
+        // Array.reduce()
+
+        var str = 'thisIsSpinalTap';
+        str.replace(/([a-z])([A-Z])/g, function(match){
+            console.log(match);
+            return '$1 $2';
+        });
+    </script>
+</head>
+<body>
+
+this
+
+</body>
+</html>

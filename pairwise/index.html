@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>$Title$</title>
+    <script>
+        function pairwise(arr, arg) {
+            var aResult = [];
+
+            for(var i=0;i<arr.length;i++){
+                for(var j=i+1;j<arr.length;j++){
+                    if(arr[i] + arr[j] == arg){
+                        if(aResult.indexOf(i) == -1 && aResult.indexOf(j) == -1){
+                            aResult.push(i);
+                            aResult.push(j);
+                        }
+                    }
+                }
+            }
+
+            return aResult.reduce(function(pre, cur){
+                return pre + cur;
+            });
+        }
+
+        console.log(pairwise([1,1,1], 2));
+
+        // total 2
+        // index 0 1 2
+        // value 1 1 1
+    </script>
+</head>
+<body>
+
+this
+
+</body>
+</html>

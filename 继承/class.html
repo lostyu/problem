@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>$Title$</title>
+    <script>
+
+        class Student{
+            constructor(name){
+                this.name = name;
+            }
+
+            hello(){
+                alert('Hello, '+this.name);
+            }
+        }
+
+        class PrimaryStudent extends Student{
+            constructor(name, grade){
+                super(name);
+                this.grade = grade;
+            }
+
+            getGrade(){
+                alert('I am at grade ' + this.grade);
+            }
+        }
+
+//        var s = new Student('Tony');
+//        s.hello();
+
+        var p1 = new PrimaryStudent('Tony', '2');
+        p1.getGrade();
+
+    </script>
+</head>
+<body>
+
+this
+
+</body>
+</html>

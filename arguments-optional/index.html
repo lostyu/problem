@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>$Title$</title>
+    <script>
+        function add() {
+            var arg1 = arguments[0];
+
+            for(var i=0;i<arguments.length;i++){
+                if(typeof arguments[i] != 'number'){
+                    return undefined;
+                }
+            }
+
+            if(arguments.length == 1){
+                return function(n1){
+                    return arg1 + n1;
+                };
+            }
+
+            if(arguments.length == 2){
+                return arguments[0] + arguments[1];
+            }
+        }
+//        add(2,3);
+        add(2)([3]);
+    </script>
+</head>
+<body>
+
+this
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>$Title$</title>
+    <script>
+        function sumFibs(n) {
+
+            function fibonacci(num){
+                var aResult = [];
+
+                for(var i=0;i<=num;i++){
+                    if(i == 0){
+                        aResult.push(0);
+                    }
+                    if(i == 1){
+                        aResult.push(1);
+                    }
+                    if(i >= 2){
+                        aResult.push(aResult[i-1]+aResult[i-2]);
+                    }
+                }
+
+                return aResult;
+            }
+
+            var arr = fibonacci(n);
+
+
+            var arr2 = arr.filter(function(elem){
+                if(elem <= n){
+                    if(elem%2 != 0){
+                        return true
+                    }
+                }
+
+            });
+
+            console.log(arr2);
+
+            return arr2.reduce(function(pre, cur){
+                return pre + cur;
+            });
+        }
+
+        console.log( sumFibs(1000) );
+
+    </script>
+</head>
+<body>
+
+this
+
+</body>
+</html>
