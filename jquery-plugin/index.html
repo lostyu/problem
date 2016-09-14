@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>jquery-plugin</title>
+    <script src="../lib/jquery-1.9.1/jquery.min.js"></script>
+    <script>
+        ;(function($){
+            $.fn.pluginName = function(options){
+                var settings = $.extend({}, $.fn.pluginName.defaults, options);
+
+                this.css({
+                    'color': settings.color,
+                    'backgroundColor': settings.backgroundColor
+                });
+
+                return this.each(function(){
+                    $(this).append(' '+$(this).attr('href'));
+                });
+            };
+
+            $.fn.pluginName.defaults = {
+                color: 'red',
+                backgroundColor: 'black'
+            };
+        })(jQuery);
+
+        $(function(){
+            $('a').pluginName({
+                color: 'green'
+            });
+        });
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+<p><a href="http://baidu.com">fdsf</a></p>
+<p><a href="http://baidu.com">fdsf</a></p>
+<p><a href="http://baidu.com">fdsf</a></p>
+
+</body>
+</html>
